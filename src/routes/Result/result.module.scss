@@ -33,6 +33,8 @@
   }
 
   .choices {
+    margin-bottom: 20px;
+
     li {
       @include body3;
       padding: 12px;

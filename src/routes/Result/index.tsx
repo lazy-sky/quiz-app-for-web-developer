@@ -1,4 +1,5 @@
 import { useRecoilValue } from 'recoil'
+import ReactMarkdown from 'react-markdown'
 import cx from 'classnames'
 
 import { answerSheetState, quizsState } from 'store/atom'
@@ -27,8 +28,9 @@ const Result = () => {
             {quizs.map((quiz, quizIndex) => (
               <li key={quiz.question}>
                 <h3 className={styles.question}>
-                  문제 {quizIndex + 1}. {quiz.question}
+                  <ReactMarkdown>{`문제 ${quizIndex + 1}. ${quiz.question}`}</ReactMarkdown>
                 </h3>
+                <ReactMarkdown>{quiz?.code || ''}</ReactMarkdown>
                 <ul className={styles.choices}>
                   {quiz.choices.map((choice, choiceIndex) => (
                     <li
