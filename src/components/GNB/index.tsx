@@ -2,7 +2,7 @@ import { Link, useLocation, matchRoutes } from 'react-router-dom'
 import cx from 'classnames'
 
 import styles from './gNB.module.scss'
-import { HomeIcon, PencilIcon, PersonIcon } from 'assets'
+import { HomeIcon, PencilIcon, PersonIcon } from 'assets/images/svgs'
 
 const GNB = () => {
   const location = useLocation()
