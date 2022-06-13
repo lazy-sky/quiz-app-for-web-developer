@@ -18,9 +18,9 @@ const QuizSelector = () => {
         </Link>
       </li>
       <li>
-        <Link to='/quiz/c'>
-          <h3>Quiz C</h3>
-          <p>Quiz C에 대한 설명</p>
+        <Link to='/quiz/javascript'>
+          <h3>Javascript Quiz</h3>
+          <p>Javascript 퀴즈입니다.</p>
         </Link>
       </li>
     </ul>

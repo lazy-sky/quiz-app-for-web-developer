@@ -9,6 +9,7 @@ import Result from './Result'
 import Maker from './Maker'
 
 import styles from './routes.module.scss'
+import QuizJS from './QuizJS'
 
 // 제목은 웹개발자 퀴즈
 // TODO: 카테고리별 퀴즈 만들기
@@ -30,6 +31,7 @@ const App = () => {
             <Route path='' element={<QuizHome />} />
             <Route path='react' element={<QuizReact />} />
             <Route path='b' element={<QuizB />} />
+            <Route path='javascript' element={<QuizJS />} />
           </Route>
           <Route path='result' element={<Result />} />
           <Route path='maker' element={<Maker />} />

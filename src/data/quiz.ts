@@ -17,6 +17,16 @@ export const dummyQuizs: IQuiz[] = [
     choices: ['애플', '인텔', '아마존', '마이크로소프트'],
     answer: 0,
   },
+  {
+    question: '`var`, `let`, `const`의 설명으로 옳지 않은 것은',
+    choices: [
+      'var로 선언한 변수에는 값을 재할당해도 에러가 발생하지 않는다.',
+      '변하지 않는 값은 const로 선언하는 것이 권장된다. ',
+      'const로 선언한 객체의 프로퍼티 값은 변경될 수 없다.',
+      'let의 스코프는 블록레벨이다.',
+    ],
+    answer: 2,
+  },
 ]
 
 export const reactQuiz: IQuiz[] = [
@@ -210,6 +220,89 @@ export const reactQuiz: IQuiz[] = [
       '데이터가 상위 항목으로 되돌아갈 수 있도록 허용하기 때문이다.',
       '절대 상태를 변이시켜서는 안 되기 때문이다.',
       'prop 값을 state로 저장할 수 없기 때문이다.',
+    ],
+    answer: 0,
+  },
+]
+
+export const JavascriptQuiz: IQuiz[] = [
+  {
+    question: '다음 코드의 출력 결과로 옳은 것은?',
+    code: `
+    function sayHi() {
+      console.log(name);
+      console.log(age);
+      var name = 'Sky';
+      let age = 99;
+    }
+    
+    sayHi();
+    `,
+    choices: [
+      'Sky 그리고 undefined',
+      'Sky 그리고 ReferenceError',
+      'ReferenceError 그리고 99',
+      'undefined 그리고 ReferenceError',
+    ],
+    answer: 3,
+  },
+  {
+    question: '다음 코드의 출력 결과로 옳은 것은?',
+    code: `
+    for (var i = 0; i < 3; i++) {
+      setTimeout(() => console.log(i), 1);
+    }
+    
+    for (let i = 0; i < 3; i++) {
+      setTimeout(() => console.log(i), 1);
+    }
+    `,
+    choices: ['0 1 2 그리고 0 1 2', '0 1 2 그리고 3 3 3', '3 3 3 그리고 0 1 2'],
+    answer: 2,
+  },
+  {
+    question: '다음 코드의 출력 결과로 옳은 것은?',
+    code: `
+    const shape = {
+      radius: 10,
+      diameter() {
+        return this.radius * 2;
+      },
+      perimeter: () => 2 * Math.PI * this.radius,
+    };
+    
+    console.log(shape.diameter());
+    console.log(shape.perimeter());
+    `,
+    choices: ['20 그리고 62.83185307179586', '20 그리고 NaN', '20 그리고 63', 'NaN 그리고 63'],
+    answer: 1,
+  },
+  {
+    question: '다음 코드의 출력 결과로 옳은 것은?',
+    code: `
+    +true;
+    !'Sky';
+    `,
+    choices: ['1 그리고 false', 'false 그리고 NaN', 'false 그리고 false'],
+    answer: 0,
+  },
+  {
+    question: '다음 코드에 대한 설명으로 옳은 것은?',
+    code: `
+    const bird = {
+      size: 'small',
+    };
+    
+    const mouse = {
+      name: 'Mickey',
+      small: true,
+    };
+    `,
+    choices: [
+      'mouse.bird.size 는 유효하지 않다.',
+      'mouse[bird.size] 는 유효하지 않다.',
+      "mouse[bird['size']] 는 유효하지 않다.",
+      '모두 유효하다.',
     ],
     answer: 0,
   },
