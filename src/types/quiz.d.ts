@@ -1,7 +1,6 @@
 export interface IQuiz {
   question: string
-  choices: {
-    text: string
-    isCorrect: boolean
-  }[]
+  choices: string[]
+  answer: number
+  // TODO: 해설
 }
