@@ -1,0 +1,58 @@
+@import '/src/styles/index';
+
+.quizCard {
+  padding: 24px;
+  background-color: $WHITE;
+  border-radius: 16px;
+
+  .questionCount {
+    @include heading5;
+    margin-bottom: 20px;
+
+    span {
+      color: $HIGHLIGHT;
+    }
+  }
+
+  .question {
+    @include heading3;
+    margin-bottom: 16px;
+  }
+
+  .choices {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    button {
+      @include body2;
+      padding: 8px;
+      color: $BODY01;
+      background-color: $PRIMARY;
+      border-radius: 16px;
+
+      &:hover,
+      &.isSelected {
+        color: $WHITE;
+        background-color: $HIGHLIGHT;
+      }
+    }
+  }
+
+  .moveBtns {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px 20px 0;
+
+    button {
+      @include body3;
+      padding: 8px;
+
+      &.result {
+        color: $WHITE;
+        background-color: $HIGHLIGHT;
+      }
+    }
+  }
+}
