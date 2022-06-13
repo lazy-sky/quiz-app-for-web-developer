@@ -23,3 +23,16 @@ footer {
   background-color: $WHITE;
   box-shadow: 0 -2px 10px rgba(0, 0, 0, 10%);
 }
+
+code {
+  margin: 0 4px;
+  color: $BODY01;
+  background-color: $CODE;
+}
+
+pre {
+  @include body2;
+  padding: 8px;
+  margin-bottom: 20px;
+  background-color: $CODE;
+}

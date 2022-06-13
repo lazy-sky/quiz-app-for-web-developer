@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useRecoilState } from 'recoil'
 import { useMount } from 'react-use'
+import ReactMarkdown from 'react-markdown'
 import cx from 'classnames'
 
 import { IQuiz } from 'types/quiz'
@@ -42,7 +43,10 @@ const QuizContainer = ({ currentQuizs }: { currentQuizs: IQuiz[] }) => {
       <div className={styles.questionCount}>
         문제 <span>{currentQuizIndex + 1}</span> / {quizs.length}
       </div>
-      <h3 className={styles.question}>{quizs[currentQuizIndex]?.question}</h3>
+      <h3 className={styles.question}>
+        <ReactMarkdown>{quizs[currentQuizIndex]?.question}</ReactMarkdown>
+      </h3>
+      <ReactMarkdown>{quizs[currentQuizIndex]?.code || ''}</ReactMarkdown>
       <div className={styles.choices}>
         {quizs[currentQuizIndex]?.choices.map((choice, index) => (
           <button

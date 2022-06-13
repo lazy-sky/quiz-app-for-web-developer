@@ -3,7 +3,7 @@ import { Routes, Route } from 'react-router-dom'
 import GNB from 'components/GNB'
 import Home from './Home'
 import QuizHome from './QuizHome'
-import QuizA from './QuizA'
+import QuizReact from './QuizReact'
 import QuizB from './QuizB'
 import Result from './Result'
 import Maker from './Maker'
@@ -28,7 +28,7 @@ const App = () => {
           <Route path='/' element={<Home />} />
           <Route path='quiz'>
             <Route path='' element={<QuizHome />} />
-            <Route path='a' element={<QuizA />} />
+            <Route path='react' element={<QuizReact />} />
             <Route path='b' element={<QuizB />} />
           </Route>
           <Route path='result' element={<Result />} />

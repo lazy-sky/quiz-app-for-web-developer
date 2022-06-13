@@ -6,9 +6,9 @@ const QuizSelector = () => {
   return (
     <ul className={styles.quizSelector}>
       <li>
-        <Link to='/quiz/a'>
-          <h3>Quiz A</h3>
-          <p>Quiz A에 대한 설명</p>
+        <Link to='/quiz/react'>
+          <h3>React Quiz</h3>
+          <p>React 기초 퀴즈입니다.</p>
         </Link>
       </li>
       <li>
