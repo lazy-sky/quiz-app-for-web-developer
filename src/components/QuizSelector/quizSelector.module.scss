@@ -1,0 +1,28 @@
+@import '/src/styles/index';
+
+.quizSelector {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+
+  li {
+    min-width: 240px;
+    padding: 16px;
+    background-color: $WHITE;
+    border-radius: 16px;
+
+    h3 {
+      @include heading3;
+      color: $TITLE01;
+    }
+
+    p {
+      @include body1;
+      color: $BODY02;
+    }
+
+    &:hover * {
+      color: $HIGHLIGHT;
+    }
+  }
+}
