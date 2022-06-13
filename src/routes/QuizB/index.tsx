@@ -5,7 +5,7 @@ import QuizContainer from 'components/QuizContainer'
 const QuizB = () => {
   return (
     <>
-      <PageHeader title='Quiz B' />
+      <PageHeader title='Quiz B' hasBackBtn />
       <main>
         <QuizContainer currentQuizs={dummyQuizs} />
       </main>

@@ -1,7 +1,6 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useRecoilState } from 'recoil'
-import { useMount } from 'react-use'
 import ReactMarkdown from 'react-markdown'
 import cx from 'classnames'
 
@@ -16,11 +15,11 @@ const QuizContainer = ({ currentQuizs }: { currentQuizs: IQuiz[] }) => {
   const [answerSheet, setAnswerSheet] = useRecoilState(answerSheetState)
   const [currentQuizIndex, setCurrentQuizIndex] = useState(0)
 
-  useMount(() => {
+  useEffect(() => {
+    const initalized = Array.from({ length: currentQuizs.length }).fill(-1) as number[]
     setQuizs(currentQuizs)
-    const initalized = Array.from({ length: quizs.length }).fill(-1) as number[]
     setAnswerSheet(initalized)
-  })
+  }, [currentQuizs, setAnswerSheet, setQuizs])
 
   const handleChoiceClick = (choiceIndex: number) => {
     setAnswerSheet((prev) => prev.map((answer, index) => (index === currentQuizIndex ? choiceIndex : answer)))
