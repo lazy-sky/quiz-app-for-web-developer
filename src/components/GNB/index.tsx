@@ -20,7 +20,7 @@ const GNB = () => {
           </Link>
         </li>
         <li>
-          <Link to='quiz/a' className={cx(checkIsActive('quiz') && styles.active)}>
+          <Link to='quiz' className={cx(checkIsActive('quiz') && styles.active)}>
             <PencilIcon />
           </Link>
         </li>

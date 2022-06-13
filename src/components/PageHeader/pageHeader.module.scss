@@ -6,6 +6,7 @@
 
   .title {
     @include heading1;
+    color: $TITLE01;
     text-align: center;
     background-color: $BACKGROUND;
   }
