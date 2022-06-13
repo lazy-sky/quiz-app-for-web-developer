@@ -1,0 +1,8 @@
+@import '/src/styles/index';
+
+.welcomeMessage {
+  @include heading4;
+  margin: 0 auto 40px;
+  color: $TITLE01;
+  text-align: center;
+}
