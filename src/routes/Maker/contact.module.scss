@@ -1,0 +1,28 @@
+@import '/src/styles/index';
+
+.maker {
+  text-align: center;
+
+  .logo {
+    svg {
+      border-radius: 100%;
+    }
+  }
+
+  .message {
+    @include body1;
+    margin: 40px 0;
+  }
+
+  .contacts {
+    svg {
+      width: 36px;
+      height: 36px;
+      margin: 16px;
+    }
+  }
+
+  .copyright {
+    @include body6;
+  }
+}

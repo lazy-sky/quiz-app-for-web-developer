@@ -6,6 +6,7 @@ import QuizHome from './QuizHome'
 import QuizA from './QuizA'
 import QuizB from './QuizB'
 import Result from './Result'
+import Maker from './Maker'
 
 import styles from './routes.module.scss'
 
@@ -31,6 +32,7 @@ const App = () => {
             <Route path='b' element={<QuizB />} />
           </Route>
           <Route path='result' element={<Result />} />
+          <Route path='maker' element={<Maker />} />
         </Routes>
       </div>
       <footer>

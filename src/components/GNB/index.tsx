@@ -25,7 +25,7 @@ const GNB = () => {
           </Link>
         </li>
         <li>
-          <Link to='contact' className={cx(checkIsActive('/contact') && styles.active)}>
+          <Link to='maker' className={cx(checkIsActive('maker') && styles.active)}>
             <PersonIcon />
           </Link>
         </li>
