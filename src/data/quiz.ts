@@ -245,6 +245,10 @@ export const JavascriptQuiz: IQuiz[] = [
       'undefined 그리고 ReferenceError',
     ],
     answer: 3,
+    commentary: [
+      '함수 안에서, 우선 `var` 키워드를 사용해 `name` 변수를 선언해요. 이것은 변수를 정의한 줄에 실제로 도달할 때까지, 기본값 `undefined`으로 호이스팅 되는 것(생성단계에 메모리 공간이 설정)을 의미해요. name 변수를 출력하려는 줄에서 아직 변수를 정의하지 않았기 때문에, undefined 값을 유지해요.',
+      '`var`와는 다르게 `let` 키워드(그리고 `const`)를 가진 변수는 호이스팅 되지만, 초기화 되지 않아요. 변수를 선언(초기화)하는 줄 전에는 접근할 수 없어요. 이건 "일시적 사각지대"라고 불려요. 변수가 선언되기 전 변수에 접근하려고 하면, JavaScript는 ReferenceError를 던져요.',
+    ],
   },
   {
     question: '다음 코드의 출력 결과로 옳은 것은?',
@@ -259,6 +263,10 @@ export const JavascriptQuiz: IQuiz[] = [
     `,
     choices: ['0 1 2 그리고 0 1 2', '0 1 2 그리고 3 3 3', '3 3 3 그리고 0 1 2'],
     answer: 2,
+    commentary: [
+      '`JavaScript의` 이벤트 큐 때문에, `setTimeout의` 콜백 함수는 루프가 실행된 후에 호출돼요. 첫 번째의 루프의 변수 `i`는 `var` 키워드를 사용해 선언되어 전역 값이 돼요. 루프 동안, 단항 연산자 `++`를 사용해 매번 `i`의 값을 1씩 증가시켰어요. `setTimeout`콜백 함수가 호출되기까지, 첫 번째 예시에서의 `i`는 3이에요.',
+      '두 번째 루프에서, 변수 `i`는 `let` 키워드를 사용해 선언되었어요: `let`(그리고 `const`) 키워드로 선언된 변수는 블록-스코프예요(블록은 { } 사이의 모든 것). 각각을 반복하는 동안, `i`는 새로운 값을 갖게 되고, 각각의 값은 루프 스코프 안에 있어요.',
+    ],
   },
   {
     question: '다음 코드의 출력 결과로 옳은 것은?',
@@ -276,6 +284,11 @@ export const JavascriptQuiz: IQuiz[] = [
     `,
     choices: ['20 그리고 62.83185307179586', '20 그리고 NaN', '20 그리고 63', 'NaN 그리고 63'],
     answer: 1,
+    commentary: [
+      '`diameter의` 값은 일반 함수지만, `perimeter의` 값은 화살표 함수라는 점을 유의하세요.',
+      '화살표 함수에서 `this` 키워드는 일반 함수와는 다르게 현재 주변 스코프를 참조해요! 이것은 `perimeter`를 부를 때 `shape` 객체가 아닌 그것을 둘러싼 스코프(예를 들면 `window`)를 참조하는 것을 의미해요.',
+      '그 객체에는 `radius`라는 값은 없기 때문에 `undefined`를 반환해요.',
+    ],
   },
   {
     question: '다음 코드의 출력 결과로 옳은 것은?',
@@ -285,6 +298,10 @@ export const JavascriptQuiz: IQuiz[] = [
     `,
     choices: ['1 그리고 false', 'false 그리고 NaN', 'false 그리고 false'],
     answer: 0,
+    commentary: [
+      '단항 더하기는 피연산자를 숫자로 변환하려 해요. `true`는 1이고, `false`는 0이에요.',
+      '문자열 `Lydia`는 참 같은 값이에요. 사실 우리가 물어본 건 "참 같은 이 값은 거짓인가?"예요. 이건 false를 반환해요.',
+    ],
   },
   {
     question: '다음 코드에 대한 설명으로 옳은 것은?',
@@ -305,5 +322,11 @@ export const JavascriptQuiz: IQuiz[] = [
       '모두 유효하다.',
     ],
     answer: 0,
+    commentary: [
+      'JavaScript에서 모든 객체의 키는 문자열이에요(심볼이 아닌 한). 객체의 키를 문자열 형 으로 입력하지 않더라도, 항상 내부적으로 문자열로 변환돼요.',
+      'JavaScript는 문장을 해석(또는 분)해요. 대괄호 표기를 사용하면 첫 번째 열린 대괄호 `[`를 보고 닫힌 대괄호 `]`를 찾을 때까지 진행해요. 다 찾은 후에만 문장을 평가할 거예요.',
+      "`mouse[bird.size]`: 먼저 `'small'`인 `bird.size`를 평가해요. `mouse['small']` 은 `true`를 반환해요.",
+      "그러나 이것은 점 표기법에서 발생하지 않아요. `mouse`가 `bird`라고 불리는 키를 가지고 있지 않기 때문에, `mouse.bird`는 `undefined`임을 의미해요. 그다음에, 점 표기법을 사용해 `size`를 물어봐요: `mouse.bird.size`. `mouse.bird`는 `undefined`이기 때문에, 사실 우리가 물어보는 건 `undefined.size`에요. 이건 유효하지 않아요, 그리고 `Cannot read property 'size' of undefined`와 비슷한 오류를 던질 거예요.",
+    ],
   },
 ]

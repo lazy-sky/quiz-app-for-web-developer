@@ -3,5 +3,6 @@ export interface IQuiz {
   code?: string
   choices: string[]
   answer: number
+  commentary?: string[]
   // TODO: 해설
 }
