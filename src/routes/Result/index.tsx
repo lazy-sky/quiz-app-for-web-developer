@@ -6,11 +6,21 @@ import { answerSheetState, quizsState } from 'store/atom'
 import PageHeader from 'components/PageHeader'
 
 import styles from './result.module.scss'
+import { useState } from 'react'
 
 const Result = () => {
   const quizs = useRecoilValue(quizsState)
   const answerSheet = useRecoilValue(answerSheetState)
   const correctCount = answerSheet.filter((answer, index) => answer === quizs[index].answer).length
+  const [commentaryShowIndex, setCommentaryShowIndex] = useState(-1)
+
+  const handleCommentaryClick = (quizIndex: number) => {
+    if (quizIndex === commentaryShowIndex) {
+      setCommentaryShowIndex(-1)
+      return
+    }
+    setCommentaryShowIndex(quizIndex)
+  }
 
   return (
     <div>
@@ -44,6 +54,17 @@ const Result = () => {
                     </li>
                   ))}
                 </ul>
+                {quiz.commentary && (
+                  <button type='button' onClick={() => handleCommentaryClick(quizIndex)} className={styles.commentary}>
+                    해설
+                  </button>
+                )}
+                {quizIndex === commentaryShowIndex &&
+                  quiz.commentary?.map((paragraph) => (
+                    <p key={paragraph} className={styles.commentary}>
+                      <ReactMarkdown>{paragraph}</ReactMarkdown>
+                    </p>
+                  ))}
               </li>
             ))}
           </ul>
