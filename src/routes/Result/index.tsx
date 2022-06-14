@@ -1,12 +1,13 @@
+import { useState } from 'react'
 import { useRecoilValue } from 'recoil'
 import ReactMarkdown from 'react-markdown'
 import cx from 'classnames'
 
 import { answerSheetState, quizsState } from 'store/atom'
 import PageHeader from 'components/PageHeader'
+import QuizSelector from 'components/QuizSelector'
 
 import styles from './result.module.scss'
-import { useState } from 'react'
 
 const Result = () => {
   const quizs = useRecoilValue(quizsState)
@@ -68,6 +69,10 @@ const Result = () => {
               </li>
             ))}
           </ul>
+        </div>
+        <div className={styles.others}>
+          <h2>다른 퀴즈도 풀어보기</h2>
+          <QuizSelector />
         </div>
       </main>
     </div>

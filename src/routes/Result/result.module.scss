@@ -57,3 +57,11 @@
     margin-bottom: 12px;
   }
 }
+
+.others {
+  > h2 {
+    @include heading3;
+    margin: 20px 0;
+    text-align: center;
+  }
+}
