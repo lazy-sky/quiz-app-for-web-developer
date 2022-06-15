@@ -14,11 +14,6 @@
     }
   }
 
-  .indicators {
-    @include body3;
-    margin-bottom: 16px;
-  }
-
   .resultSheet {
     > li {
       margin: 16px 0;
@@ -41,14 +36,22 @@
     }
   }
 
-  .answer {
-    padding: 12px;
-    background-color: $PRIMARY;
-  }
-
   .myChoice {
     padding: 12px;
     border: 2px solid $HIGHLIGHT;
+
+    &::before {
+      content: '내가 고른 답: ';
+    }
+  }
+
+  .answer {
+    padding: 12px;
+    background-color: $PRIMARY;
+
+    &::before {
+      content: '정답: ';
+    }
   }
 
   .commentary {

@@ -31,10 +31,6 @@ const Result = () => {
           <div className={styles.score}>
             점수 : <span>{correctCount}</span> / {quizs.length}
           </div>
-          <div className={styles.indicators}>
-            <div className={styles.answer}>정답</div>
-            <div className={styles.myChoice}>내가 고른 답</div>
-          </div>
           <ul className={styles.resultSheet}>
             {quizs.map((quiz, quizIndex) => (
               <li key={quiz.question}>
