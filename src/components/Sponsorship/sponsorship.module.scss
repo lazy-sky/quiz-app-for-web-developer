@@ -1,0 +1,8 @@
+@import '/src/styles/index';
+
+.sponsorship {
+  @include body6;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}

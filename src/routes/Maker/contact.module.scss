@@ -25,4 +25,18 @@
   .copyright {
     @include body6;
   }
+
+  .sponsorship {
+    margin: 32px 0;
+
+    a {
+      padding: 24px;
+      background-color: $WHITE;
+      border-radius: 16px;
+
+      &:hover {
+        color: $HIGHLIGHT;
+      }
+    }
+  }
 }

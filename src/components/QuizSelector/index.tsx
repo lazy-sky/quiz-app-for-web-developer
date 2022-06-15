@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom'
 
+import Sponsorship from 'components/Sponsorship'
+
 import styles from './quizSelector.module.scss'
 
 const QuizSelector = () => {
@@ -22,6 +24,9 @@ const QuizSelector = () => {
           <h3>Javascript Quiz</h3>
           <p>Javascript 퀴즈입니다.</p>
         </Link>
+      </li>
+      <li>
+        <Sponsorship />
       </li>
     </ul>
   )

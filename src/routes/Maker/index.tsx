@@ -2,6 +2,7 @@ import PageHeader from 'components/PageHeader'
 import { GithubIcon, KakaoIcon, MeerkatIcon } from 'assets/images/svgs'
 
 import styles from './contact.module.scss'
+import Sponsorship from 'components/Sponsorship'
 
 const Maker = () => {
   return (
@@ -25,6 +26,9 @@ const Maker = () => {
               <a href='https://open.kakao.com/o/siQfK7ke' target='_blank' rel='noreferrer'>
                 <KakaoIcon />
               </a>
+            </div>
+            <div className={styles.sponsorship}>
+              <Sponsorship />
             </div>
             <div className={styles.copyright}>ⓒ 2022. @lazy-sky. all rights reserved.</div>
           </div>
